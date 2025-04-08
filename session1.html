@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Session 1: Introduction to Research Frameworks</title>
+  <meta name="description" content="Phase 1, Session 1: Introduction to Research Frameworks" />
+
+  <style>
+    :root {
+      --primary-color: #4c6ef5;
+      --secondary-color: #40c057;
+      --accent-color: #fd7e14;
+      --dark-color: #343a40;
+      --light-color: #f8f9fa;
+      --text-color: #212529;
+      --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: #f1f3f5;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 5px;
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--primary-color), #228be6);
+      color: #fff;
+      padding: 2.5rem;
+      text-align: center;
+      border-radius: 15px;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+    
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+    
+    header h2 {
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+    
+    header p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+    
+    .date-box {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      font-weight: 500;
+      margin-top: 0.5rem;
+    }
+    
+    /* Intro section and video */
+    .intro-section {
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .intro-message {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 1.5rem auto;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      margin: 1.5rem auto;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+    
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+
+    /* Pre-Assessment & Session Resources */
+    .assessment-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin: 2rem 0 1rem 0;
+    }
+    
+    .assessment-link {
+      flex: 1;
+      min-width: 250px;
+      max-width: 350px;
+      background-color: var(--light-color);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
+    
+    .assessment-link:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .assessment-link h3 {
+      color: var(--dark-color);
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+    
+    .assessment-link p {
+      margin-bottom: 1.2rem;
+      color: #495057;
+    }
+    
+    .pre-link {
+      background-color: #e3fafc;
+      border: 2px solid #15aabf;
+    }
+    
+    .post-link {
+      background-color: #ebfbee;
+      border: 2px solid #37b24d;
+    }
+    
+    .button {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 0.9rem;
+    }
+    
+    .pre-button {
+      background-color: #15aabf;
+      color: #fff;
+    }
+    
+    .pre-button:hover {
+      background-color: #1098ad;
+      box-shadow: 0 4px 8px rgba(21, 170, 191, 0.3);
+    }
+    
+    .post-button {
+      background-color: #37b24d;
+      color: #fff;
+    }
+    
+    .post-button:hover {
+      background-color: #2f9e44;
+      box-shadow: 0 4px 8px rgba(55, 178, 77, 0.3);
+    }
+
+    /* Hidden resource list */
+    #resourcesList {
+      text-align: left;
+      margin-top: 1rem;
+      display: none; /* default hidden */
+    }
+
+    #resourcesList ul {
+      list-style-type: disc;
+      margin-left: 1.5rem;
+    }
+
+    /* Activities Section with drop-downs */
+    .activities-section {
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .section-title {
+      color: var(--primary-color);
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background-color: var(--primary-color);
+    }
+
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .activity-card {
+      background-color: var(--light-color);
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .activity-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .activity-card h4 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .activity-card h4 .time {
+      font-size: 0.8rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 20px;
+      background-color: var(--accent-color);
+      color: #fff;
+      font-weight: normal;
+    }
+
+    .activity-card ul {
+      padding-left: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .activity-card li {
+      margin-bottom: 0.5rem;
+      color: #495057;
+      font-size: 0.95rem;
+    }
+
+    .expand-icon {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      background-color: var(--primary-color);
+      color: #fff;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+
+    .detailed-content {
+      display: none;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-top: 1rem;
+      border-top: 3px solid var(--primary-color);
+    }
+
+    .detailed-content.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Boxes for Key Terms, Discussion, Activities, Reflection */
+    .definition-box {
+      background-color: #e7f5ff;
+      border-left: 4px solid #4dabf7;
+      padding: 1rem;
+      border-radius: 5px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .discussion-box {
+      background-color: #fff9db;
+      border-left: 4px solid #fcc419;
+      padding: 1rem;
+      border-radius: 5px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .activity-box {
+      background-color: #f3f0ff;
+      border-left: 4px solid #7950f2;
+      padding: 1rem;
+      border-radius: 5px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .feedback-box {
+      background-color: #ebfbee;
+      border-left: 4px solid #40c057;
+      padding: 1rem;
+      border-radius: 5px;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: var(--dark-color);
+      color: #fff;
+      border-radius: 15px;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .assessment-links {
+        flex-direction: column;
+        align-items: center;
+      }
+      .assessment-link {
+        width: 100%;
+      }
+      .activity-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Session 1</h1>
+      <h2>Introduction to Research Frameworks</h2>
+      <p>Phase 1: Training, Research Foundations &amp; Tool Development</p>
+      <!-- Updated time to 1 hour 45 mins (105 mins) -->
+      <div class="date-box">Tuesday, April 8, 2025 | 1 hour 45 mins</div>
+    </header>
+    
+    <!-- Introduction & Video Placeholder -->
+    <section class="intro-section">
+      <div class="intro-message">
+        <p>
+          Welcome to Session 1! Today, we’ll introduce the internship goals, expectations,
+          and foundational research concepts. We’ll cover the basics of public health, 
+          community needs assessments, YPAR methodology, and set up our digital collaboration environment.
+        </p>
+      </div>
+      
+      <!-- <div class="video-container"> 
+        <iframe width="560" height="315" 
+          src="https://www.youtube.com/embed/VIDEO_ID_HERE" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen>
+        </iframe>
+      </div> -->
+    </section>
+
+    <!-- Pre-Assessment & Session Resources -->
+    <div class="assessment-links">
+      <!-- PRE-ASSESSMENT LINK -->
+      <div class="assessment-link pre-link">
+        <p>
+          Please collaborate with your new SIP team members and complete this brief survey.
+        </p>
+        
+        <div style="margin-top: 1rem; text-align: center;">
+          <strong>Or Scan this QR code:</strong>
+          <br>
+          <img 
+            src="MIT_SIP_Survey_qrcode.png" 
+            alt="QR Code Placeholder" 
+            style="width: 150px; height: 150px; margin-top: 0.5rem;"
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Activities Section -->
+    <section class="activities-section">
+      <h2 class="section-title">Session Activities</h2>
+      <p style="text-align: center; margin-bottom: 20px; color: #495057;">
+        Click on an activity to see details.
+      </p>
+      
+      <div class="activity-grid">
+        
+        <!-- Activity 1: Intro to Public Health & YPAR -->
+        <div class="activity-card" onclick="toggleSection('activity-public-health')" aria-expanded="false">
+          <h4>Intro to Public Health & YPAR 
+            <span class="time">25 mins</span>
+          </h4>
+          <ul>
+            <li>Foundational public health concepts</li>
+            <li>Why community needs assessments matter</li>
+            <li>Key principles of YPAR</li>
+          </ul>
+          <div class="expand-icon">+</div>
+
+          <div id="activity-public-health" class="detailed-content">
+            <!-- Key Terms -->
+            <div class="definition-box">
+              <h4>Key Terms</h4>
+              <p><strong>Public Health:</strong> The science of protecting and improving community health.</p>
+              <p><strong>Community Needs Assessment:</strong> Identifying local issues to guide solutions.</p>
+              <p><strong>Youth Participatory Action Research (YPAR):</strong> Engaging youth as co-researchers.</p>
+            </div>
+
+            <!-- Discussion Points -->
+            <div class="discussion-box">
+              <h4>Discussion Points</h4>
+              <ul>
+                <li>How can public health data shape community programs or policies?</li>
+                <li>Why is a needs assessment critical before launching a project?</li>
+                <li>How does YPAR differ from traditional research approaches?</li>
+              </ul>
+            </div>
+
+            <!-- Activity -->
+            <div class="activity-box">
+              <h4>Activity</h4>
+              <p>Analyze a brief case study showing how youth researchers used public health data to address a school-based health issue. Discuss possible parallels in your local context.</p>
+            </div>
+
+            <!-- Reflection Questions -->
+            <div class="feedback-box">
+              <h4>Reflection Questions</h4>
+              <ul>
+                <li>What public health issues resonate most with you?</li>
+                <li>How do you see youth involvement affecting real change in these issues?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Activity 2: Quantitative vs. Qualitative Methods -->
+        <div class="activity-card" onclick="toggleSection('activity-quant-vs-qual')" aria-expanded="false">
+          <h4>Quantitative vs. Qualitative Methods 
+            <span class="time">15 mins</span>
+          </h4>
+          <ul>
+            <li>When to use each approach</li>
+            <li>Strengths & limitations</li>
+            <li>Potential AI integrations</li>
+          </ul>
+          <div class="expand-icon">+</div>
+
+          <div id="activity-quant-vs-qual" class="detailed-content">
+            <!-- Key Terms -->
+            <div class="definition-box">
+              <h4>Key Terms</h4>
+              <p><strong>Quantitative Research:</strong> Collecting numerical data for statistical analysis.</p>
+              <p><strong>Qualitative Research:</strong> Exploring themes and experiences through interviews or focus groups.</p>
+              <p><strong>AI Integration:</strong> Tools for data analysis or question generation based on large datasets.</p>
+            </div>
+
+            <!-- Discussion Points -->
+            <div class="discussion-box">
+              <h4>Discussion Points</h4>
+              <ul>
+                <li>Which local problems might be better understood with quantitative data?</li>
+                <li>What role can qualitative stories or interviews play in shaping policy?</li>
+                <li>How might AI streamline collecting or interpreting this data?</li>
+              </ul>
+            </div>
+
+            <!-- Activity -->
+            <div class="activity-box">
+              <h4>Activity</h4>
+              <p>Work with a partner to brainstorm 2–3 hypothetical research questions: at least one fits a quantitative approach (e.g., surveys) and one fits a qualitative approach (e.g., interviews).</p>
+            </div>
+
+            <!-- Reflection Questions -->
+            <div class="feedback-box">
+              <h4>Reflection Questions</h4>
+              <ul>
+                <li>Which method feels most accessible to you right now?</li>
+                <li>How could mixing methods provide a fuller picture of a community issue?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Activity 3: Team-Building -->
+        <div class="activity-card" onclick="toggleSection('activity-team-building')" aria-expanded="false">
+          <h4>Team-Building: “What are the needs in our community?” 
+            <span class="time">20 mins</span>
+          </h4>
+          <ul>
+            <li>Brainstorming local issues</li>
+            <li>Digital whiteboarding session</li>
+            <li>Identify potential research topics</li>
+          </ul>
+          <div class="expand-icon">+</div>
+
+          <div id="activity-team-building" class="detailed-content">
+            <!-- Key Terms -->
+            <div class="definition-box">
+              <h4>Key Terms</h4>
+              <p><strong>Brainstorming:</strong> Generating ideas freely without immediate judgment.</p>
+              <p><strong>Collaborative Mapping:</strong> Visualizing community issues as a team.</p>
+              <p><strong>Digital Whiteboard:</strong> Online tools for real-time, shared note-taking or sketching.</p>
+            </div>
+
+            <!-- Discussion Points -->
+            <div class="discussion-box">
+              <h4>Discussion Points</h4>
+              <ul>
+                <li>Why is group input valuable for identifying community issues?</li>
+                <li>How might digital tools enhance or hinder this process?</li>
+                <li>What themes keep surfacing across different groups?</li>
+              </ul>
+            </div>
+
+            <!-- Activity -->
+            <div class="activity-box">
+              <h4>Activity</h4>
+              <p>In small groups, create virtual “sticky notes” listing local challenges you’re aware of. Group similar notes to discover overarching themes. Discuss how AI might help gather more data on those themes.</p>
+            </div>
+
+            <!-- Reflection Questions -->
+            <div class="feedback-box">
+              <h4>Reflection Questions</h4>
+              <ul>
+                <li>Which community needs did you find surprising?</li>
+                <li>Did discussing with others change your perspective on local issues?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Activity 4: Pre-Training Knowledge Check -->
+        <div class="activity-card" onclick="toggleSection('activity-knowledge-check')" aria-expanded="false">
+          <h4>Pre-Training Knowledge Check 
+            <span class="time">20 mins</span>
+          </h4>
+          <ul>
+            <li>Short quiz on research basics</li>
+            <li>Assess familiarity with AI tools</li>
+            <li>Identify areas for growth</li>
+          </ul>
+          <div class="expand-icon">+</div>
+          
+          <div id="activity-knowledge-check" class="detailed-content">
+            <!-- Key Terms -->
+            <div class="definition-box">
+              <h4>Key Terms</h4>
+              <p><strong>Knowledge Check:</strong> A preliminary assessment of your current skill set.</p>
+              <p><strong>Baseline Understanding:</strong> Your starting point before formal training.</p>
+              <p><strong>Self-Assessment:</strong> Reflecting on your knowledge gaps or strengths.</p>
+            </div>
+
+            <!-- Discussion Points -->
+            <div class="discussion-box">
+              <h4>Discussion Points</h4>
+              <ul>
+                <li>How do knowledge checks help shape future learning activities?</li>
+                <li>Which topics are you most/least confident in?</li>
+                <li>How can we use AI to address specific knowledge gaps?</li>
+              </ul>
+            </div>
+
+            <!-- Activity -->
+            <div class="activity-box">
+              <h4>Activity</h4>
+              <p>Complete a 10-question survey (digital or paper) covering basic concepts of public health, YPAR, and AI usage. Discuss any confusing questions with a peer or mentor afterward.</p>
+            </div>
+
+            <!-- Reflection Questions -->
+            <div class="feedback-box">
+              <h4>Reflection Questions</h4>
+              <ul>
+                <li>Which quiz areas showed the greatest need for more training?</li>
+                <li>How might you use AI or additional resources to improve your understanding?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Assignment -->
+    <section class="activities-section">
+      <h2 class="section-title">Assignment</h2>
+      <p style="text-align: center; margin-bottom: 20px; color: #495057;">
+        This assignment reinforces what you learned today and prepares you for upcoming sessions.
+      </p>
+      <div class="activity-grid">
+        <div class="activity-card" style="cursor:auto;">
+          <h4>Reflective Journal Entry <span class="time">Due Next Session</span></h4>
+          <ul>
+            <li>“What needs do I see in my own neighborhood?”</li>
+            <li>Identify at least one potential community issue</li>
+            <li>Consider how it might be addressed through YPAR</li>
+          </ul>
+          <!-- We leave the details section always open here for clarity -->
+          <div class="expand-icon" style="pointer-events: none;">&nbsp;</div>
+          <div class="detailed-content" style="display: block;">
+            <p>
+              <strong>Instructions:</strong> Spend 1–2 paragraphs describing a local issue or 
+              challenge that stands out to you. Reflect on why it matters and how youth involvement, 
+              guided by data, could contribute to solutions. Be prepared to share your thoughts in 
+              our next session.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 Needs Assessment & YPAR Curriculum with AI Integration</p>
+      <p>Questions? Contact: javier@clubstride.org | (707) 204-3160</p>
+    </footer>
+  </div>
+
+  <!-- JavaScript for toggling resources and activity details -->
+  <script>
+    function toggleResources() {
+      const resourcesDiv = document.getElementById('resourcesList');
+      const showButton = document.getElementById('show-resources-btn');
+      if (resourcesDiv.style.display === 'none') {
+        resourcesDiv.style.display = 'block';
+        showButton.textContent = 'Hide Resources';
+      } else {
+        resourcesDiv.style.display = 'none';
+        showButton.textContent = 'Show Resources';
+      }
+    }
+
+    function toggleSection(sectionId) {
+      const contentElement = document.getElementById(sectionId);
+      if (!contentElement) return;
+      contentElement.classList.toggle('active');
+      
+      const parentCard = contentElement.closest('.activity-card');
+      if (parentCard) {
+        const isActive = contentElement.classList.contains('active');
+        parentCard.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+        
+        // Update the expand icon text
+        const expandIcon = parentCard.querySelector('.expand-icon');
+        if (expandIcon) {
+          expandIcon.textContent = isActive ? '-' : '+';
+        }
+      }
+    }
+  </script>
+</body>
+</html>

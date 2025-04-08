@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Session 1: Partner Outreach & Preliminary Material Creation</title>
+  <meta name="description" content="Phase 1: Partner Outreach & Initial Material Creation - 1 hour 45 mins session" />
+
+  <style>
+    :root {
+      --primary-color: #4c6ef5;
+      --secondary-color: #40c057;
+      --accent-color: #fd7e14;
+      --dark-color: #343a40;
+      --light-color: #f8f9fa;
+      --text-color: #212529;
+      --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: #f1f3f5;
+    }
+    
+    .container {
+      max-width: 1000px; /* Increase this if you want a wider layout */
+      margin: 0 auto;
+      padding: 5px;
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--primary-color), #228be6);
+      color: #fff;
+      padding: 2.5rem;
+      text-align: center;
+      border-radius: 15px;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+    
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+    
+    header h2 {
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+    
+    header p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+    
+    .date-box {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      font-weight: 500;
+      margin-top: 0.5rem;
+    }
+    
+    /* Intro section and video */
+    .intro-section {
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .intro-message {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 1.5rem auto;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      margin: 1.5rem auto;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+    
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+
+    /* Pre-Assessment & Session Resources */
+    .assessment-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin: 2rem 0 1rem 0;
+    }
+    
+    .assessment-link {
+      flex: 1;
+      min-width: 250px;
+      max-width: 350px;
+      background-color: var(--light-color);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
+    
+    .assessment-link:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .assessment-link h3 {
+      color: var(--dark-color);
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+    
+    .assessment-link p {
+      margin-bottom: 1.2rem;
+      color: #495057;
+    }
+    
+    .pre-link {
+      background-color: #e3fafc;
+      border: 2px solid #15aabf;
+    }
+    
+    .post-link {
+      background-color: #ebfbee;
+      border: 2px solid #37b24d;
+    }
+    
+    .button {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 0.9rem;
+    }
+    
+    .pre-button {
+      background-color: #15aabf;
+      color: #fff;
+    }
+    
+    .pre-button:hover {
+      background-color: #1098ad;
+      box-shadow: 0 4px 8px rgba(21, 170, 191, 0.3);
+    }
+    
+    .post-button {
+      background-color: #37b24d;
+      color: #fff;
+    }
+    
+    .post-button:hover {
+      background-color: #2f9e44;
+      box-shadow: 0 4px 8px rgba(55, 178, 77, 0.3);
+    }
+
+    /* Hidden resource list */
+    #resourcesList {
+      text-align: left;
+      margin-top: 1rem;
+      display: none; /* default hidden */
+    }
+
+    #resourcesList ul {
+      list-style-type: disc;
+      margin-left: 1.5rem;
+    }
+
+    /* Activities Section with drop-downs */
+    .activities-section {
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .section-title {
+      color: var(--primary-color);
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background-color: var(--primary-color);
+    }
+
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .activity-card {
+      background-color: var(--light-color);
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .activity-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .activity-card h4 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .activity-card h4 .time {
+      font-size: 0.8rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 20px;
+      background-color: var(--accent-color);
+      color: #fff;
+      font-weight: normal;
+    }
+
+    .activity-card ul {
+      padding-left: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .activity-card li {
+      margin-bottom: 0.5rem;
+      color: #495057;
+      font-size: 0.95rem;
+    }
+
+    .expand-icon {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      background-color: var(--primary-color);
+      color: #fff;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+
+    .detailed-content {
+      display: none;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-top: 1rem;
+      border-top: 3px solid var(--primary-color);
+    }
+
+    .detailed-content.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Boxes for Key Terms, Discussion, Activities, Reflection */
+    .definition-box {
+      background-color: #e7f5ff;
+      border-left: 4px solid #4dabf7;
+      padding: 1rem;
+      border-radius: 5px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .discussion-box {
+      background-color: #fff9db;
+      border-left: 4px solid #fcc419;
+      padding: 1rem;
+      border-radius: 5px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .activity-box {
+      background-color: #f3f0ff;
+      border-left: 4px solid #7950f2;
+      padding: 1rem;
+      border-radius: 5px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .feedback-box {
+      background-color: #ebfbee;
+      border-left: 4px solid #40c057;
+      padding: 1rem;
+      border-radius: 5px;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: var(--dark-color);
+      color: #fff;
+      border-radius: 15px;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .assessment-links {
+        flex-direction: column;
+        align-items: center;
+      }
+      .assessment-link {
+        width: 100%;
+      }
+      .activity-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Session 1</h1>
+      <h2>Partner Outreach &amp; Preliminary Material Creation</h2>
+      <p>Phase 1: Partner Outreach &amp; Initial Material Creation</p>
+      <!-- Updated total session time to 1 hour 45 mins (105 mins) -->
+      <div class="date-box">Tuesday, April 8, 2025 | 1 hour 45 mins</div>
+    </header>
+    
+    <!-- Introduction & Video Placeholder -->
+    <section class="intro-section">
+      <div class="intro-message">
+        <p>
+          This 1 hour 45-minute session focuses on identifying and contacting prospective local health agencies, 
+          community organizations, and school clubs to map out their potential contributions. 
+          We’ll begin drafting targeted marketing materials that outline event themes and career exploration objectives, 
+          and we’ll conduct a preliminary needs assessment to ensure our workshop design meets community needs.
+        </p>
+      </div>
+      
+      <!-- (Optional) Video container; remove if not needed -->
+      <!-- <div class="video-container">
+        <iframe width="560" height="315" 
+          src="https://www.youtube.com/embed/VIDEO_ID_HERE" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen>
+        </iframe>
+      </div> -->
+    </section>
+
+     <!-- Pre-Assessment & Session Resources -->
+     <div class="assessment-links">
+      <!-- PRE-ASSESSMENT LINK -->
+      <div class="assessment-link pre-link">
+        <!-- <h3>Before We Begin</h3> -->
+        <p>
+          Please collaborate with your new SIP team members to administer this brief survey to at least one participant
+        </p>
+        
+        <!-- Button linking to your pre-assessment -->
+        <!-- <a href="#" target="_blank" class="button pre-button">
+          Take Pre-Assessment
+        </a> -->
+        
+        <!-- QR Code placeholder image -->
+        <div style="margin-top: 1rem; text-align: center;">
+          <strong>Or Scan this QR code:</strong>
+          <br>
+          <img 
+            src="7_question_needs_assessment_qrcode.png" 
+            alt="QR Code Placeholder" 
+            style="width: 150px; height: 150px; margin-top: 0.5rem;"
+          >
+        </div>
+      </div>      
+      
+      <!-- SESSION RESOURCES LINK -->
+      <!-- <div class="assessment-link post-link" style="display: flex; align-items: center; flex-direction: column;">
+        <h3>Session Resources</h3>
+        <p>Access digital materials, AI tools, and collaboration platforms for Session 1.</p> -->
+        
+        <!-- Toggle Button -->
+        <!-- <button
+          id="show-resources-btn"
+          class="button post-button"
+          onclick="toggleResources()"
+          style="margin-top: 0.5rem;"
+        >
+          Show Resources
+        </button> -->
+        
+        <!-- Hidden Resource List -->
+        <!-- <div id="resourcesList">
+          <ul>
+            <li><a href="#" target="_blank">Orientation Slide Deck</a></li>
+            <li><a href="#" target="_blank">Intro to YPAR Principles</a></li>
+            <li><a href="#" target="_blank">AI Basics Tutorial</a></li>
+          </ul>
+        </div>
+      </div> -->
+    </div>
+
+    <!-- Activities Section -->
+    <section class="activities-section">
+      <h2 class="section-title">Session Activities</h2>
+      <p style="text-align: center; margin-bottom: 20px; color: #495057;">
+        Click on an activity to see details (Key Terms, Discussion, Activity, Reflection).
+      </p>
+      
+      <div class="activity-grid">
+        <!-- Activity 1: Partner Outreach & Mapping -->
+        <div class="activity-card" onclick="toggleSection('activity-outreach-mapping')" aria-expanded="false">
+          <h4>Review New Research Materials  
+            <span class="time">30 mins</span>
+          </h4>
+          <ul>
+            <li>Analyze recently provided data or documents</li>
+            <li>Identify insights relevant to your Draft Marketing Materials</li>
+          </ul>
+          <div class="expand-icon">+</div>
+          
+          <div id="activity-outreach-mapping" class="detailed-content">
+            <div class="definition-box">
+              <h4>Key Terms</h4>
+              <p><strong>Data Analysis:</strong> Examining research findings to discover key trends or recommendations.</p>
+              <p><strong>Research Integration:</strong> Incorporating new insights into your new Marketing Materials.</p>
+            </div>
+
+            <div class="discussion-box">
+              <h4>Discussion Points</h4>
+              <ul>
+                <li>Which findings stand out as most relevant for your workshop’s career exploration or event themes?</li>
+                <li>How can you adapt these insights to different audience groups (e.g., youth, parents, community partners)?</li>
+              </ul>
+            </div>
+
+            <div class="activity-box">
+              <h4>Activity</h4>
+              <p>Highlight 2–3 key points or recommendations you believe could shape your workshop’s content or outreach.</p>
+            </div>
+
+            <div class="feedback-box">
+              <h4>Reflection Questions</h4>
+              <ul>
+                <li>How do these materials confirm or challenge your initial ideas about the event?</li>
+                <li>Which additional data or resources would you like to explore before finalizing your approach?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Activity 2: Draft Marketing Materials -->
+        <div class="activity-card" onclick="toggleSection('activity-marketing-materials')" aria-expanded="false">
+          <h4>Draft Marketing Materials 
+            <span class="time">30 mins</span>
+          </h4>
+          <ul>
+            <li>Event themes and career exploration objectives</li>
+            <li>Flyer design, social media posts</li>
+          </ul>
+          <div class="expand-icon">+</div>
+
+          <div id="activity-marketing-materials" class="detailed-content">
+            <div class="definition-box">
+              <h4>Key Terms</h4>
+              <p><strong>Brand Identity:</strong> Consistent look and feel for your event across platforms.</p>
+              <p><strong>Target Audience:</strong> The primary group(s) you want to attract to the workshop.</p>
+            </div>
+
+            <div class="discussion-box">
+              <h4>Discussion Points</h4>
+              <ul>
+                <li>Which marketing channels (print, social media, email) best reach your audience?</li>
+                <li>How do you highlight both event themes and career exploration in a concise way?</li>
+              </ul>
+            </div>
+
+            <div class="activity-box">
+              <h4>Activity</h4>
+              <p>Sketch or outline a draft flyer or short social media post featuring your workshop’s name, date, and theme. Include a short tagline that emphasizes career pathways or exploration.</p>
+            </div>
+
+            <div class="feedback-box">
+              <h4>Reflection Questions</h4>
+              <ul>
+                <li>What design elements or messages might resonate with local youth or community partners?</li>
+                <li>How can you measure whether your marketing efforts are effective (signups, social media engagement, etc.)?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Activity 3: Preliminary Needs Assessment -->
+        <div class="activity-card" onclick="toggleSection('activity-needs-assessment')" aria-expanded="false">
+          <h4>Conduct Preliminary Needs Assessment 
+            <span class="time">30 mins</span>
+          </h4>
+          <ul>
+            <li>Identify key workshop needs or topics</li>
+            <li>Gather initial data from potential partners or the community</li>
+          </ul>
+          <div class="expand-icon">+</div>
+          
+          <div id="activity-needs-assessment" class="detailed-content">
+            <div class="definition-box">
+              <h4>Key Terms</h4>
+              <p><strong>Needs Assessment:</strong> Collecting data to identify gaps in knowledge or resources before finalizing workshop design.</p>
+              <p><strong>Key Stakeholders:</strong> People or groups directly impacted by the workshop (students, parents, partner agencies).</p>
+            </div>
+
+            <div class="discussion-box">
+              <h4>Discussion Points</h4>
+              <ul>
+                <li>Which workshop topics (health awareness, career building, etc.) seem most relevant based on early partner or community feedback?</li>
+                <li>How do you plan to collect and organize these initial findings (Google Forms, interviews, quick polls)?</li>
+              </ul>
+            </div>
+
+            <div class="activity-box">
+              <h4>Activity</h4>
+              <p>Design a brief needs assessment questionnaire (digital or paper) to circulate among potential attendees or partners. List 3–5 questions that will guide your workshop content decisions.</p>
+            </div>
+
+            <div class="feedback-box">
+              <h4>Reflection Questions</h4>
+              <ul>
+                <li>What early insights have you gained about your audience’s primary needs?</li>
+                <li>How might your workshop blueprint evolve as more data comes in?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Outcomes Section -->
+    <section class="activities-section">
+      <h2 class="section-title">Outcome</h2>
+      <p style="text-align: center; margin-bottom: 20px; color: #495057;">
+        By the end of this 1 hour 45-minute session, you should achieve these milestones:
+      </p>
+      <div class="activity-grid">
+        <div class="activity-card" style="cursor:auto;">
+          <h4>Foundation of Confirmed Partners <span class="time">Ongoing</span></h4>
+          <ul>
+            <li>Initial commitments or leads for workshop contributions</li>
+            <li>Shortlist of key partners to follow up with</li>
+          </ul>
+          <div class="expand-icon" style="pointer-events: none;">&nbsp;</div>
+          <div class="detailed-content" style="display: block;">
+            <p>
+              Keep a concise record of each contact, their interests, and potential roles 
+              (e.g., sponsoring a booth, providing speakers, co-hosting specific sessions).
+            </p>
+          </div>
+        </div>
+        
+        <div class="activity-card" style="cursor:auto;">
+          <h4>Preliminary Workshop Blueprint <span class="time">In Development</span></h4>
+          <ul>
+            <li>Rough outline of workshop goals & key themes</li>
+            <li>Early partner roles or potential session ideas</li>
+          </ul>
+          <div class="expand-icon" style="pointer-events: none;">&nbsp;</div>
+          <div class="detailed-content" style="display: block;">
+            <p>
+              Based on your marketing drafts and initial needs assessment, create a skeleton plan 
+              for the workshop’s agenda, highlighting career exploration objectives 
+              and health-related content.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 Partner Outreach &amp; Preliminary Material Creation</p>
+      <p>Questions? Contact: javier@clubstride.org | (707) 204-3160</p>
+    </footer>
+  </div>
+
+  <!-- JavaScript for toggling resources and activity details -->
+  <script>
+    function toggleResources() {
+      const resourcesDiv = document.getElementById('resourcesList');
+      const showButton = document.getElementById('show-resources-btn');
+      if (resourcesDiv.style.display === 'none') {
+        resourcesDiv.style.display = 'block';
+        showButton.textContent = 'Hide Resources';
+      } else {
+        resourcesDiv.style.display = 'none';
+        showButton.textContent = 'Show Resources';
+      }
+    }
+
+    function toggleSection(sectionId) {
+      const contentElement = document.getElementById(sectionId);
+      if (!contentElement) return;
+      contentElement.classList.toggle('active');
+      
+      const parentCard = contentElement.closest('.activity-card');
+      if (parentCard) {
+        const isActive = contentElement.classList.contains('active');
+        parentCard.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+        
+        // Update the expand icon text
+        const expandIcon = parentCard.querySelector('.expand-icon');
+        if (expandIcon) {
+          expandIcon.textContent = isActive ? '-' : '+';
+        }
+      }
+    }
+  </script>
+</body>
+</html>

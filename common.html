@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Toggle Between Two Sessions</title>
+  <style>
+    /* styling omitted for brevity */
+  </style>
+</head>
+<body>
+  <div class="toggle-buttons">
+    <button onclick="showSession('session1')">Show Session 1: Introduction</button>
+    <button onclick="showSession('session2')">Show Session 1: Outreach</button>
+  </div>
+
+  <!-- Default load "session1.html" (assume it's in the same folder) -->
+  <iframe 
+    id="sessionFrame" 
+    src="session4.1.html" 
+    style="width:100%; height:100vh; border:none;">
+  </iframe>
+
+  <script>
+    function showSession(sessionId) {
+      const sessionFrame = document.getElementById('sessionFrame');
+      if (sessionId === 'session1') {
+        sessionFrame.src = 'session1.html';
+      } else {
+        sessionFrame.src = 'session4.1.html';
+      }
+    }
+  </script>
+</body>
+</html>
